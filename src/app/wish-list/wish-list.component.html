@@ -1,0 +1,15 @@
+<div class="row mt-3">
+  <div *ngIf="wishes.length === 0; else showItems">
+    <p>No items to display</p>
+  </div>
+</div>
+
+<ng-template #showItems>
+  <ul class="wish-list">
+    <app-wish-list-item
+      *ngFor="let wish of wishes; index as itemIndex"
+      [wish]="wish"
+    >
+    </app-wish-list-item>
+  </ul>
+</ng-template>
